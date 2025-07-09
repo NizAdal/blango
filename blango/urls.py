@@ -37,15 +37,14 @@ urlpatterns = [
     name="django_registration_register",
     ),
     path("accounts/", include("django_registration.backends.activation.urls")),
-
-
-
+   
 ]
 if settings.DEBUG:
     urlpatterns += [
         path("__debug__/", include(debug_toolbar.urls)),
         path("accounts/", include("django.contrib.auth.urls")),
         path("accounts/profile/", blango_auth.views.profile, name="profile"),
+         path("accounts/", include("allauth.urls")),
 
 
     ]
