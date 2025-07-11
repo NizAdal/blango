@@ -45,7 +45,7 @@ if settings.DEBUG:
         path("accounts/", include("django.contrib.auth.urls")),
         path("accounts/profile/", blango_auth.views.profile, name="profile"),
         path("accounts/", include("allauth.urls")),
-        path("api/v1/", include("blog.api_urls")),
+        path("api/v1/", include("blog.api.urls")),
 
 
     ]
