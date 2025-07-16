@@ -15,4 +15,7 @@
         </div>
     {% endrow %}
     {% endfor %}
+    {% if post.hero_image %}
+    <img src="{{ post.hero_image.thumbnail.100x100.url }}"/>
+    {% endif %}
 {% endblock %}
