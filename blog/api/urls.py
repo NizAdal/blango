@@ -11,6 +11,7 @@ router = DefaultRouter()
 router.register("tags", TagViewSet)
 router.register("posts", PostViewSet)
 from blog.api.views import UserDetail, TagViewSet, PostViewSet
+from rest_framework_simplejwt.views import TokenObtainPairView, TokenRefreshView
 
 
 urlpatterns = [
@@ -39,6 +40,9 @@ urlpatterns += [
         name="posts-by-time",
     ),
     path("", include(router.urls)),
+    path("jwt/", TokenObtainPairView.as_view(), name="jwt_obtain_pair"),
+    path("jwt/refresh/", TokenRefreshView.as_view(), name="jwt_refresh"),
+
 
 
 ]
