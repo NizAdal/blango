@@ -46,6 +46,8 @@ if settings.DEBUG:
         path("accounts/profile/", blango_auth.views.profile, name="profile"),
         path("accounts/", include("allauth.urls")),
         path("api/v1/", include("blog.api.urls")),
+        path("post-table/", blog.views.post_table, name="blog-post-table"),
+
 
 
     ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
